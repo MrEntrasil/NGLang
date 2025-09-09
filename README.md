@@ -18,18 +18,18 @@ cmake --build build
 <type> <name>, <value>
 ```
 ### Example
-```nglang
+```c
 int foo, 5
 string bar, "I make a variable!"
 ```
 ## Looping
-```nglang
+```c
 while <condition> {
   ...code
 }
 ```
 ### Example
-```nglang
+```c
 int res, 0
 
 while res<10 {
