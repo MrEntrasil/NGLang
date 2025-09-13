@@ -7,7 +7,8 @@
 namespace NGLexer {
     enum class TokenType {
         IDENT, STRING, NUMBER,
-        KEYWORD, BINARY
+        KEYWORD, BINARY,
+        LPAREN, RPAREN
     };
     struct Token {
         std::string text;

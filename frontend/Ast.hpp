@@ -15,6 +15,7 @@ namespace NGAst {
         void print() const override {
             std::cout << value;
         }
+        LiteralExpr(std::string& val, NGLexer::TokenType typ) : value(val), type(typ) {}
     };
     struct BinaryExpr : Expr {
         char op;
@@ -26,9 +27,15 @@ namespace NGAst {
             std::cout << op << ' ';
             right->print(); std::cout << ')';
         }
+        BinaryExpr(char o, std::unique_ptr<Expr> l, std::unique_ptr<Expr> r) :
+        op(o), left(std::move(l)), right(std::move(r)) {}
     };
     struct Stmt : Node {};
     struct PrintStmt : Stmt {
         std::unique_ptr<Expr> expr;
+    };
+    struct VarDeclStmt : Stmt {
+        std::string name;
+        std::unique_ptr<Expr> init;
     };
 }

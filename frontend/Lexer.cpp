@@ -50,6 +50,14 @@ std::unique_ptr<NGLexer::Tokens> NGLexer::Lexer::tokenize() {
             tokens->push_back({ std::string {c}, NGLexer::TokenType::BINARY });
             continue;
         }
+        else if (c == '(') {
+            tokens->push_back({ "(", NGLexer::TokenType::LPAREN });
+            continue;
+        }
+        else if (c == ')') {
+            tokens->push_back({ ")", NGLexer::TokenType::RPAREN });
+            continue;
+        }
         else throw std::runtime_error("Unexpected token: "+std::string {c});
     }
     return tokens;
