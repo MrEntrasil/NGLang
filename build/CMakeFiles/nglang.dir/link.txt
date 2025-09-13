@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/nglang.dir/main.cpp.o CMakeFiles/nglang.dir/frontend/Lexer.cpp.o -o nglang 
