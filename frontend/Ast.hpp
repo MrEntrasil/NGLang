@@ -34,6 +34,9 @@ namespace NGAst {
     struct PrintStmt : Stmt {
         std::unique_ptr<Expr> expr;
     };
+    struct ExprStmt : Stmt {
+        std::unique_ptr<Expr> expr;
+    };
     struct VarDeclStmt : Stmt {
         std::string name;
         std::unique_ptr<Expr> init;

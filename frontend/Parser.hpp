@@ -13,6 +13,8 @@ namespace NGParser {
         std::unique_ptr<NGAst::Stmt> parsePrint_stmt();
         std::unique_ptr<NGAst::Expr> parseTerm_expr();
         std::unique_ptr<NGAst::Expr> parseFactor_expr();
+        std::unique_ptr<NGAst::Stmt> parseExprStmt();
+        void expect(NGLexer::TokenType type);
     public:
         Parser(std::unique_ptr<NGLexer::Tokens> tk) : tokens(std::move(tk)), pos(0) {}
         std::unique_ptr<NGAst::Stmt> parse_stmt();

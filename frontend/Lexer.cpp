@@ -58,6 +58,14 @@ std::unique_ptr<NGLexer::Tokens> NGLexer::Lexer::tokenize() {
             tokens->push_back({ ")", NGLexer::TokenType::RPAREN });
             continue;
         }
+        else if (c == ';') {
+            tokens->push_back({ ";", NGLexer::TokenType::SEMICOLON });
+            continue;
+        }
+        else if (c == ',') {
+            tokens->push_back({ ",", NGLexer::TokenType::COLON });
+            continue;
+        }
         else throw std::runtime_error("Unexpected token: "+std::string {c});
     }
     return tokens;
